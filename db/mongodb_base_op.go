@@ -2,7 +2,7 @@ package db
 
 import (
 	"context"
-	"UnityGame_ABMServer/config"
+	"UnityGame_AB_System/config"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"

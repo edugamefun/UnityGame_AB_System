@@ -1,11 +1,12 @@
 package main
 
 import (
-	"UnityGame_ABMServer/db"
+	"UnityGame_AB_System/game_server"
+	"UnityGame_AB_System/db"
 	"runtime"
-	"UnityGame_ABMServer/config"
-	"UnityGame_ABMServer/dao"
-	"UnityGame_ABMServer/syscom"
+	"UnityGame_AB_System/config"
+	"UnityGame_AB_System/dao"
+	"UnityGame_AB_System/syscom"
 	"fmt"
 	"io/ioutil"
 	"strconv"
@@ -37,7 +38,8 @@ func Init() {
 	route.GET("/", HomePage)
 	//
 	route.Static("/ab", "./ab")
-
+	//
+	
 	route.Run(fmt.Sprintf(":%d", port))
 }
 
@@ -102,5 +104,8 @@ func main() {
 	config.StartInit(configpath)
 	db.StartInit()
 	
-	Init()
+	// go Init()
+
+	game_server.StartRunServer()
+	fmt.Println("Start..OK.")
 }

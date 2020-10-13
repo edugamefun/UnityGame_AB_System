@@ -1,7 +1,7 @@
 mongo_url: mongodb://127.0.0.1:27017
 http_port: 8081
 debug: true
-db_name: fbad
+db_name: game_run_log
 shost: http://127.0.0.1:8085
 data_server_address: http://127.0.0.1:9098
 open_rpt_auto_count: 0

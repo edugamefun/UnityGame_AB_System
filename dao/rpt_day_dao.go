@@ -2,8 +2,8 @@ package dao
 //2020-10-12
 //https://github.com/mongodb/mongo-go-driver
 import (
-	"UnityGame_ABMServer/db"
-	"UnityGame_ABMServer/syscom"
+	"UnityGame_AB_System/db"
+	"UnityGame_AB_System/syscom"
 	"context"
 	"fmt"
 
