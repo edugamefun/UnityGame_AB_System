@@ -10,9 +10,9 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-var Conf *config
+var ConfCom *ConfigComData
 
-type config struct {
+type ConfigComData struct {
 	Shost             string `yaml:"shost"`
 	MongoUrl          string `yaml:"mongo_url"`
 	HttpPort          int    `yaml:"http_port"`
@@ -35,12 +35,12 @@ func StartInit(f_path string) {
 		panic("load file fail," + err.Error())
 	}
 
-	c := &config{}
+	c := &ConfigComData{}
 
 	if err := yaml.Unmarshal(b, c); err != nil {
 		panic(err)
 	}
 
-	Conf = c
+	ConfCom = c
 
 }

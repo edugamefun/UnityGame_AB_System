@@ -15,7 +15,7 @@ func StartInit() {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-	client, err := mongo.Connect(ctx, options.Client().ApplyURI(config.Conf.MongoUrl))
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI(config.ConfCom.MongoUrl))
 	if err != nil {
 		//log
 	}
@@ -34,7 +34,7 @@ func GetClient() *mongo.Client {
 func Get_Collection(datatable_name string) *mongo.Collection {
 
 	c := GetClient()
-	var dt = c.Database(config.Conf.DBName).Collection(datatable_name)
+	var dt = c.Database(config.ConfCom.DBName).Collection(datatable_name)
 	return dt
 }
 

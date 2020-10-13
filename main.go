@@ -104,8 +104,10 @@ func main() {
 	config.StartInit(configpath)
 	db.StartInit()
 	
-	// go Init()
-
-	game_server.StartRunServer()
+	if config.ConfCom.OpenRptAutoCount > 0{
+		game_server.StartRunServer()
+	}else{
+		Init()
+	}
 	fmt.Println("Start..OK.")
 }
